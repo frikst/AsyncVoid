@@ -18,8 +18,6 @@ namespace KST.AsyncVoid
 			this.aDisposed = false;
 		}
 
-		#region Implementation of ITaskStarter
-
 		public Task Start(Func<Task> task)
 		{
 			if (this.aDisposed)
@@ -40,8 +38,6 @@ namespace KST.AsyncVoid
 			return Task.CompletedTask;
 		}
 
-		#endregion
-
 		public void CancelAll()
 		{
 			if (this.aDisposed)
@@ -50,8 +46,6 @@ namespace KST.AsyncVoid
 			foreach (var task in this.aTasks)
 				task.Cts?.Cancel();
 		}
-
-		#region Implementation of IAsyncDisposable
 
 		public async ValueTask DisposeAsync()
 		{
@@ -71,7 +65,5 @@ namespace KST.AsyncVoid
 				task.Registration.Dispose();
 			}
 		}
-
-		#endregion
 	}
 }

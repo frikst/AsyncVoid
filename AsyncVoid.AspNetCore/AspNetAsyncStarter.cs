@@ -13,13 +13,9 @@ namespace AsyncVoid.AspNetCore
 			this.aLogger = logger;
 		}
 
-		#region Overrides of BackgroundAsyncStarter
-
 		protected override void LogError(Exception ex)
 		{
 			this.aLogger.LogError(0, ex, "Exception in a background task");
 		}
-
-		#endregion
 	}
 }
