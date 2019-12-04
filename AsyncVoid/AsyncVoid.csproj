@@ -1,0 +1,12 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>netstandard1.0;netstandard1.3</TargetFrameworks>
+    <RootNamespace>KST.AsyncVoid</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\AsyncVoid.Abstractions\AsyncVoid.Abstractions.csproj" />
+  </ItemGroup>
+
+</Project>
