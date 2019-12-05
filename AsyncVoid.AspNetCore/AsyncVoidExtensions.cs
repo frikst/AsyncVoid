@@ -1,7 +1,7 @@
 ﻿using KST.AsyncVoid.Abstractions;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace AsyncVoid.AspNetCore
+namespace KST.AsyncVoid.AspNetCore
 {
 	public static class AsyncVoidExtensions
 	{

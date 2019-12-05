@@ -5,7 +5,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using KST.AsyncVoid.Abstractions;
 
-namespace KST.AsyncVoid
+namespace KST.AsyncVoid.Testing
 {
 	public class LocalAsyncStarter : IAsyncStarter, IAsyncDisposable
 	{

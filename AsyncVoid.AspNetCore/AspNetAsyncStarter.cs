@@ -1,8 +1,7 @@
 ﻿using System;
-using KST.AsyncVoid;
 using Microsoft.Extensions.Logging;
 
-namespace AsyncVoid.AspNetCore
+namespace KST.AsyncVoid.AspNetCore
 {
 	public class AspNetAsyncStarter : BackgroundAsyncStarter
 	{
