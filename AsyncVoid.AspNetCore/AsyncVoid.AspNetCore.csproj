@@ -13,6 +13,7 @@
     <Description>Library for simplifiing starting of backround tasks in asp .NET core apps.</Description>
     <Copyright>© 2019 Department of Software Technologies</Copyright>
     <PackageLicenseExpression>LGPL-3.0-or-later</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/frikst/AsyncVoid</PackageProjectUrl>
   </PropertyGroup>
 
   <PropertyGroup>
