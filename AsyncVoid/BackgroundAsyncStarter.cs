@@ -6,10 +6,18 @@ using KST.AsyncVoid.Abstractions;
 
 namespace KST.AsyncVoid
 {
+	/// <summary>
+	/// Base class for background task starters
+	/// </summary>
 	public abstract class BackgroundAsyncStarter : IAsyncStarter
 	{
+		/// <summary>
+		/// Log exception from background task
+		/// </summary>
+		/// <param name="ex">A catched exception</param>
 		protected abstract void LogError(Exception ex);
 
+		/// <inheritdoc />
 		public Task Start(Func<Task> task)
 		{
 			this.StartInBackground(task);
@@ -20,6 +28,7 @@ namespace KST.AsyncVoid
 #endif
 		}
 
+		/// <inheritdoc />
 		public Task Start(Func<CancellationToken, Task> task, CancellationToken cancellationToken)
 		{
 			this.StartInBackground(task, cancellationToken);

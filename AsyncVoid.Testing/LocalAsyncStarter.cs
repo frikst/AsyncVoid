@@ -7,17 +7,25 @@ using KST.AsyncVoid.Abstractions;
 
 namespace KST.AsyncVoid.Testing
 {
+	/// <summary>
+	/// Task starter targeted especially for the use in unit tests. All tasks are awaited
+	/// in DisposeAsync to process background exceptions
+	/// </summary>
 	public class LocalAsyncStarter : IAsyncStarter, IAsyncDisposable
 	{
 		private readonly List<(Task Task, CancellationTokenSource Cts, CancellationTokenRegistration Registration)> aTasks;
 		private bool aDisposed;
 
+		/// <summary>
+		/// Creates a task starter
+		/// </summary>
 		public LocalAsyncStarter()
 		{
 			this.aTasks = new List<(Task, CancellationTokenSource, CancellationTokenRegistration)>();
 			this.aDisposed = false;
 		}
 
+		/// <inheritdoc />
 		public Task Start(Func<Task> task)
 		{
 			if (this.aDisposed)
@@ -27,6 +35,7 @@ namespace KST.AsyncVoid.Testing
 			return Task.CompletedTask;
 		}
 
+		/// <inheritdoc />
 		public Task Start(Func<CancellationToken, Task> task, CancellationToken cancellationToken)
 		{
 			if (this.aDisposed)
@@ -38,6 +47,10 @@ namespace KST.AsyncVoid.Testing
 			return Task.CompletedTask;
 		}
 
+		/// <summary>
+		/// Cancels all started cancellable tasks
+		/// </summary>
+		/// <exception cref="InvalidOperationException"></exception>
 		public void CancelAll()
 		{
 			if (this.aDisposed)
@@ -47,6 +60,7 @@ namespace KST.AsyncVoid.Testing
 				task.Cts?.Cancel();
 		}
 
+		/// <inheritdoc />
 		public async ValueTask DisposeAsync()
 		{
 			for (;;)

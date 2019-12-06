@@ -5,4 +5,27 @@
     <RootNamespace>KST.AsyncVoid.Abstractions</RootNamespace>
   </PropertyGroup>
 
+  <PropertyGroup>
+    <PackageId>KST.AsyncVoid.Abstractions</PackageId>
+    <Authors>Jan Janech</Authors>
+    <Company>Department of Software Technologies, Faculty of Management Science and Informatics, University of Žilina</Company>
+    <Product>KST.AsyncVoid.Abstractions</Product>
+    <Description>Library for simplifiing starting of backround tasks.</Description>
+    <Copyright>© 2019 Department of Software Technologies</Copyright>
+    <PackageLicenseExpression>LGPL-3.0-or-later</PackageLicenseExpression>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)'=='Release'">
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <WarningsAsErrors />
+  </PropertyGroup>
+
 </Project>
