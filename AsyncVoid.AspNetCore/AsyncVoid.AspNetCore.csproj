@@ -8,7 +8,7 @@
   <PropertyGroup>
     <PackageId>KST.AsyncVoid.AspNetCore</PackageId>
     <Authors>Jan Janech</Authors>
-    <Version>2.0.0</Version>
+    <Version>2.1.0</Version>
     <Company>Department of Software Technologies, Faculty of Management Science and Informatics, University of Žilina</Company>
     <Product>KST.AsyncVoid.AspNetCore</Product>
     <Description>Library for simplifiing starting of backround tasks in asp .NET core apps.</Description>
